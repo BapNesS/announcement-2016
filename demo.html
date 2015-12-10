@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-  <title>bla</title>
+  <title>2016 est l&agrave;</title>
 
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
   <meta name="mobile-web-app-capable" content="yes">
@@ -19,9 +19,11 @@
   <link rel="import" href="./bower_components/paper-styles/color.html">
   <link rel="import" href="./bower_components/paper-styles/shadow.html">
   <link rel="import" href="./bower_components/iron-flex-layout/iron-flex-layout.html">
+  <link rel="import" href="./bower_components/iron-media-query/iron-media-query.html">
+  <link rel="import" href="./simple-overlay.html">
 
-  <link rel="stylesheet" href="./bower_components/paper-styles/demo.css">
 
+		<link rel="stylesheet" type="text/css" href="set2.css" />
   <style is="custom-style">
       body {
           background-color: #F9F9FB;
@@ -35,7 +37,8 @@
       background-color: #F9F9FB;
       /* background for toolbar when it is at its full size */
       --paper-scroll-header-panel-full-header: {
-        background-image: url('https://scontent-fra3-1.xx.fbcdn.net/hphotos-xta1/t31.0-8/12087090_10153679326366882_6852399691616574988_o.jpg');
+        background-image: url('hhttps://scontent-fra3-1.xx.fbcdn.net/hphotos-xta1/t31.0-8/12087090_10153679326366882_6852399691616574988_o.jpg');
+          background-color: navy;
       };
       /* background for toolbar when it is condensed */
       --paper-scroll-header-panel-condensed-header: {
@@ -58,21 +61,22 @@
       font-size: 20px;
       padding-bottom: 10px;
     }
+    .title {
+        
+      font-size: 26px;
+    }
     .subtitle {
       padding-top: 4px;
       font-size: 16px;
+        
+      -webkit-transform-origin: left center;
+      transform-origin: left center;
     }
-    .bookmark {
-      position: absolute;
-      bottom: -24px;
-      right: 24px;
-      fill: var(--paper-orange-600);
-      height: 48px;
-      width: 48px;
+    .subtitle.hidden {
+        display: none;
     }
     .content {
       padding: 0px;
-      /*padding: 16px 10px 16px 50px;*/
     }
     .indent {
       margin-left: 60px;
@@ -88,12 +92,12 @@
   }
 
   .vertical-section {
-    padding: 25px 24px 36px 24px;
+    padding: 25px 25px 36px 25px;
   }
 
   .vertical-section-card {
     background-color: white;
-    margin: 0 24px 24px 24px;
+    margin: 0 0 25px 25px;
     padding: 24px;
     @apply(--shadow-elevation-2dp);
   }
@@ -139,59 +143,259 @@
     .paper-font-body1 {
       @apply(--paper-font-body1);
     }
-
-
       
+      
+
+
+        .mobile {
+            display: block;
+        }
+        .mobile[wide-layout] {
+            display: none;
+        }
+        .desktop {
+            display: none;
+        }
+        .desktop[wide-layout] {
+            display: block;
+        }
+      
+                      .flex-end-justified {
+                        @apply(--layout-horizontal);
+                        @apply(--layout-end-justified);
+                      }
+      
+      paper-toolbar a {
+          color: white;
+      }
+    </style>
+    <style  is="custom-style">
+      
+      .flex-wrap {
+            @apply(--layout-horizontal);
+            @apply(--layout-wrap);
+            max-width: 1000px;
+                margin-bottom: 72px;
+
+          }
+  .container > div {
+      width: 250px;
+    min-height: 20px;
+      cursor: pointer;
+}
   </style>
 
 </head>
-<body unresolved>
+<body unresolved onclick="clickHandler(event);">
 
   <!-- `keepCondensedHeader` makes the condensed header to not scroll away -->
-  <paper-scroll-header-panel condenses keep-condensed-header header-height="256" condensed-header-height="75">
+  <paper-scroll-header-panel condenses keep-condensed-header header-height="256" condensed-header-height="64">
 
     <paper-toolbar>
-
-      <paper-icon-button icon="arrow-back"></paper-icon-button>
+        
+        <a href="../../">
+            <paper-icon-button icon="arrow-back"></paper-icon-button>
+        </a>
       <div class="spacer"></div>
-      <a href="http://www.baptistecarlier.com/announcement/2015/">
-          <paper-button><iron-icon icon="hardware:keyboard-arrow-left"></iron-icon> 2015</paper-button>
-      </a>
-      <paper-icon-button icon="link"></paper-icon-button>
-      <paper-icon-button icon="social:share"></paper-icon-button>
-      <paper-icon-button icon="thumb-up"></paper-icon-button>
-      <paper-icon-button icon="mail"></paper-icon-button>
+        
+            <template is="dom-bind">
+                
+              <iron-media-query query="(min-width: 600px)" query-matches="{{wide}}"></iron-media-query>
+              <iron-media-query full query="print" query-matches="{{print}}"></iron-media-query>
+
+              <div class="desktop" wide-layout$="{{wide}}">
+                <div class="container flex-end-justified">
+                  <template is="dom-if" if="{{wide}}">
+                      <style>
+                        a {color: green; /* variabiliser*/ }
+                      </style>
+                      <!-- TODO : factoriser #1 -->
+                      <a href="../2015/" target="_blank">
+                          <paper-icon-button icon="hardware:keyboard-arrow-left"></paper-icon-button>
+                      </a>
+                      <a href="https://github.com/BapNesS/announcement-2016" target="_blank">
+                        <paper-icon-button icon="icons:file-download"></paper-icon-button>
+                      </a>
+                  </template>
+                </div>
+              </div>
+            </template>
+        
       <div class="bottom indent bottom-text" self-end>
-        <div>bla</div>
-        <div class="subtitle">bla</div>
+        <div class="botton title">C'est parti pour 2016</div>
+        <div class="subtitle">Il est l'heure !</div>
       </div>
-      <iron-icon class="bottom bookmark" icon="bookmark"></iron-icon>
 
     </paper-toolbar>
 
     <div class="content">
 
         
-      <div class="vertical-section-container centered elevat">
+      <div class="vertical-section-container centered">
         <div class="vertical-section paper-font-body2">
-          <p>bla</p>
-            <p class="paper-font-body1">bla</p>
-        </div>
-      </div>
-      <div class="vertical-section-container centered elevat">
-          test
-        <div class="vertical-section vertical-section-card">
-          <div>bla</div>
-          <div>bla</div>
-          <div>bla</div>
-          <div>bla</div>
-          <div>bla</div>
+            
+        
+            <template is="dom-bind">
+                
+              <iron-media-query query="(min-width: 600px)" query-matches="{{wide}}"></iron-media-query>
+              <iron-media-query full query="print" query-matches="{{print}}"></iron-media-query>
+
+              <div class="mobile" wide-layout$="{{wide}}">
+                <div class="container flex-end-justified">
+                  <template is="dom-if" if="{{!wide}}">
+                      <style>
+                        a {color: red; /* variabiliser*/ }
+                      </style>
+                      <!-- TODO : factoriser #1 -->
+                      <a href="../2015/" target="_blank">
+                          <paper-icon-button icon="hardware:keyboard-arrow-left"></paper-icon-button>
+                      </a>
+                      <a href="https://github.com/BapNesS/announcement-2016/" target="_blank">
+                        <paper-icon-button icon="icons:file-download"></paper-icon-button>
+                      </a>
+                  </template>
+                </div>
+              </div>
+            </template>
+            
+            <p>Il est parfois temps de faire un peu le bilan, regarder en arri&egrave;re pour savoir o&ugrave; regarde en suite.</p>
+            <p>J'aurais pu remettre en cause ce petit processus mis en place il y a quelques ann&eacute;es maintenant, mais j'aime bien cet exercice qui m&ecirc;le introspection &amp; technique.</p>
+            <p class="paper-font-body1">Cliquez sur une carte pour avoir plus d'informations.</p>
         </div>
       </div>
 
+      <div class="vertical-section-container centered">
+
+          <div class="container flex-wrap">
+              <div class="vertical-section-card" data-dialog="backdropA">one</div>
+              <div class="vertical-section-card" data-dialog="backdropA">two</div>
+              <div class="vertical-section-card" data-dialog="backdropB">three</div>
+              <div class="vertical-section-card" data-dialog="backdropC">four</div>
+              <div class="vertical-section-card grid" data-dialog="backdropC">
+					<figure class="effect-jazz">
+						<img src="https://raw.githubusercontent.com/codrops/HoverEffectIdeas/master/img/25.jpg" alt="img25">
+						<figcaption>
+							<h2>Dynamic <span>Jazz</span></h2>
+							<p>When Jazz starts to chase cars, the whole world stands still.</p>
+							<a href="#">View more</a>
+						</figcaption>			
+					</figure>
+            </div>
+            </div>
+      </div>
+        
+        
+      <simple-overlay id="backdropA" with-backdrop>
+        Hello world! A
+      </simple-overlay>
+      <simple-overlay id="backdropB" with-backdrop>
+        Hello world! B
+      </simple-overlay>
+      <simple-overlay id="backdropC" with-backdrop>
+        Hello world! C
+      </simple-overlay>
+
+        <div class="grid">
+					<figure class="effect-julia">
+						<img src="https://raw.githubusercontent.com/codrops/HoverEffectIdeas/master/img/21.jpg" alt="img21">
+						<figcaption>
+							<h2>Passionate <span>Julia</span></h2>
+							<div>
+								<p>Julia dances in the deep dark</p>
+								<p>She loves the smell of the ocean</p>
+								<p>And dives into the morning light</p>
+							</div>
+							<a href="#">View more</a>
+						</figcaption>			
+					</figure>
+					<figure class="effect-julia">
+						<img src="https://raw.githubusercontent.com/codrops/HoverEffectIdeas/master/img/22.jpg" alt="img22">
+						<figcaption>
+							<h2>Passionate <span>Julia</span></h2>
+							<div>
+								<p>Julia dances in the deep dark</p>
+								<p>She loves the smell of the ocean</p>
+								<p>And dives into the morning light</p>
+							</div>
+							<a href="#">View more</a>
+						</figcaption>			
+					</figure>
+				</div>
+        
+        <div class="grid">
+					<figure class="effect-apollo">
+						<img src="https://raw.githubusercontent.com/codrops/HoverEffectIdeas/master/img/18.jpg" alt="img18">
+						<figcaption>
+							<h2>Strong <span>Apollo</span></h2>
+							<p>Apollo's last game of pool was so strange.</p>
+							<a href="#">View more</a>
+						</figcaption>			
+					</figure>
+					<figure class="effect-apollo">
+						<img src="https://raw.githubusercontent.com/codrops/HoverEffectIdeas/master/img/22.jpg" alt="img22">
+						<figcaption>
+							<h2>Strong <span>Apollo</span></h2>
+							<p>Apollo's last game of pool was so strange.</p>
+							<a href="#">View more</a>
+						</figcaption>			
+					</figure>
+				</div>
+        
+        
+        <div class="grid">
+					<figure class="effect-jazz">
+						<img src="https://raw.githubusercontent.com/codrops/HoverEffectIdeas/master/img/25.jpg" alt="img25">
+						<figcaption>
+							<h2>Dynamic <span>Jazz</span></h2>
+							<p>When Jazz starts to chase cars, the whole world stands still.</p>
+							<a href="#">View more</a>
+						</figcaption>			
+					</figure>
+					<figure class="effect-jazz">
+						<img src="https://raw.githubusercontent.com/codrops/HoverEffectIdeas/master/img/6.jpg" alt="img06">
+						<figcaption>
+							<h2>Dynamic <span>Jazz</span></h2>
+							<p>When Jazz starts to chase cars, the whole world stands still.</p>
+							<a href="#">View more</a>
+						</figcaption>			
+					</figure>
+				</div>
+        
     </div>
 
   </paper-scroll-header-panel>
+    
+    
+  <script>
+    // custom transformation: scale header's title
+    var subtitle = document.querySelector('.subtitle');
+    addEventListener('paper-header-transform', function(e) {
+      var d = e.detail;
+      var m = d.height - d.condensedHeight;
+      var b = (m - d.y);
+      var p = Math.round(b * 100 / m ) / 100;
+      Polymer.Base.transform('scale(' + p + ') translateZ(0)', subtitle);
+        if ( p < 0.10 ) {
+            Polymer.Base.toggleClass("hidden", true, subtitle);
+        } else {
+            Polymer.Base.toggleClass("hidden", false, subtitle);
+        }
+
+    });
+
+      function clickHandler(e) {
+            console.log("clickhandler");
+        if (!e.target.hasAttribute('data-dialog')) {
+          return;
+        }
+        var id = e.target.getAttribute('data-dialog');
+        var dialog = document.getElementById(id);
+          
+        if (dialog) {
+          dialog.open();
+        }
+      }
+    </script>
 
 </body>
 </html>
