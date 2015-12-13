@@ -39,7 +39,7 @@
 }
 
 .grid figure figcaption {
-	padding: 2em;
+	/*padding: 2em;*/
 	color: #fff;
 	text-transform: uppercase;
 	font-size: 1.25em;
@@ -926,7 +926,7 @@ figure.effect-steve:hover p {
 /***** Moses *****/
 /*-----------------*/
 
-figure.effect-moses {
+figure.effect-moses, figure.bg-effect-moses {
 	background: -webkit-linear-gradient(-45deg, #EC65B7 0%,#05E0D8 100%);
 	background: linear-gradient(-45deg, #EC65B7 0%,#05E0D8 100%);
 }
@@ -982,17 +982,46 @@ figure.effect-moses:hover img {
 	opacity: 0.6;
 }
 
+
+/*---------------*/
+/***** Autres *****/
+/*---------------*/
+
+figure.bg-effect-sadie {
+	background: -webkit-linear-gradient(top, rgba(72,76,97,0) 0%, rgba(72,76,97,0.8) 75%);
+	background: linear-gradient(to bottom, rgba(72,76,97,0) 0%, rgba(72,76,97,0.8) 75%);
+}
+
+figure.bg-effect-roxy {
+	background: -webkit-linear-gradient(45deg, #ff89e9 0%, #05abe0 100%);
+	background: linear-gradient(45deg, #ff89e9 0%,#05abe0 100%);
+}
+
+figure.bg-effect-oscar {
+	background: -webkit-linear-gradient(45deg, #22682a 0%, #9b4a1b 40%, #3a342a 100%);
+	background: linear-gradient(45deg, #22682a 0%,#9b4a1b 40%,#3a342a 100%);
+}
+
+figure.bg-effect-dexter {
+	background: -webkit-linear-gradient(top, rgba(37,141,200,1) 0%, rgba(104,60,19,1) 100%);
+	background: linear-gradient(to bottom, rgba(37,141,200,1) 0%,rgba(104,60,19,1) 100%); 
+}
+
 /*---------------*/
 /***** Jazz *****/
 /*---------------*/
 
-figure.effect-jazz {
+figure {
+    font-family: 'Yantramanav', sans-serif;
+}
+/* autres : bg-effect-moses, bg-effect-lexi, bg-effect-duke */
+figure.bg-effect-jazz {
 	background: -webkit-linear-gradient(-45deg, #f3cf3f 0%,#f33f58 100%);
 	background: linear-gradient(-45deg, #f3cf3f 0%,#f33f58 100%);
 }
 
 figure.effect-jazz img {
-	opacity: 0.9;
+	opacity: 0.6;
 }
 
 figure.effect-jazz figcaption::after,
@@ -1012,8 +1041,8 @@ figure.effect-jazz figcaption::after {
 	border-bottom: 1px solid #fff;
 	content: '';
 	opacity: 0;
-	-webkit-transform: rotate3d(0,0,1,45deg) scale3d(1,0,1);
-	transform: rotate3d(0,0,1,45deg) scale3d(1,0,1);
+	-webkit-transform: rotate3d(1,0,1,45deg) scale3d(1,0,1);
+	transform: rotate3d(1,0,1,45deg) scale3d(1,0,1);
 	-webkit-transform-origin: 50% 50%;
 	transform-origin: 50% 50%;
 }
@@ -1021,12 +1050,12 @@ figure.effect-jazz figcaption::after {
 figure.effect-jazz h2,
 figure.effect-jazz p {
 	opacity: 1;
-	-webkit-transform: scale3d(0.8,0.8,1);
-	transform: scale3d(0.8,0.8,1);
+	-webkit-transform: scale3d(1,1,1);
+	transform: scale3d(1,1,1);
 }
 
 figure.effect-jazz h2 {
-	padding-top: 26%;
+	padding-top: 24%;
 	-webkit-transition: -webkit-transform 0.35s;
 	transition: transform 0.35s;
 }
@@ -1039,22 +1068,24 @@ figure.effect-jazz p {
 }
 
 figure.effect-jazz:hover img {
-	opacity: 0.7;
-	-webkit-transform: scale3d(1.05,1.05,1);
-	transform: scale3d(1.05,1.05,1);
+	opacity: 0.8;
+	-webkit-transform: scale3d(1.1,1.1,1);
+	transform: scale3d(1.1,1.1,1);
 }
 
 figure.effect-jazz:hover figcaption::after {
 	opacity: 1;
-	-webkit-transform: rotate3d(0,0,1,45deg) scale3d(1,1,1);
-	transform: rotate3d(0,0,1,45deg) scale3d(1,1,1);
+/*	-webkit-transform: rotate3d(0,0,1,45deg) scale3d(1,1,1);
+	transform: rotate3d(0,0,1,45deg) scale3d(1,1,1); */
+	-webkit-transform: rotate3d(1,0,1,45deg) scale3d(1,1.25,1);
+	transform: rotate3d(1,0,1,45deg) scale3d(1,1.25,1);
 }
 
 figure.effect-jazz:hover h2,
 figure.effect-jazz:hover p {
 	opacity: 1;
-	-webkit-transform: scale3d(1,1,1);
-	transform: scale3d(1,1,1);
+	-webkit-transform: scale3d(0.8,0.8,1);
+	transform: scale3d(0.8,0.8,1);
 }
 
 /*---------------*/
@@ -1126,7 +1157,7 @@ figure.effect-ming:hover img {
 /***** Lexi *****/
 /*---------------*/
 
-figure.effect-lexi {
+figure.effect-lexi, figure.bg-effect-lexi {
 	background: -webkit-linear-gradient(-45deg, #000 0%,#fff 100%);
 	background: linear-gradient(-45deg, #000 0%,#fff 100%);
 }
@@ -1211,7 +1242,7 @@ figure.effect-lexi:hover p {
 /***** Duke *****/
 /*---------------*/
 
-figure.effect-duke {
+figure.effect-duke, figure.bg-effect-duke {
 	background: -webkit-linear-gradient(-45deg, #34495e 0%,#cc6055 100%);
 	background: linear-gradient(-45deg, #34495e 0%,#cc6055 100%);
 }
@@ -1258,14 +1289,4 @@ figure.effect-duke:hover p {
 	opacity: 1;
 	-webkit-transform: scale3d(1,1,1);
 	transform: scale3d(1,1,1);
-}
-
-/* Media queries */
-@media screen and (max-width: 50em) {
-	.grid figure {
-		display: inline-block;
-		float: none;
-		margin: 10px auto;
-		width: 100%;
-	}
 }

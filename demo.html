@@ -22,7 +22,7 @@
   <link rel="import" href="./bower_components/iron-media-query/iron-media-query.html">
   <link rel="import" href="./simple-overlay.html">
 
-
+<link href='https://fonts.googleapis.com/css?family=Yantramanav:400,900,700,500,300,100' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" type="text/css" href="set2.css" />
   <style is="custom-style">
       body {
@@ -37,7 +37,7 @@
       background-color: #F9F9FB;
       /* background for toolbar when it is at its full size */
       --paper-scroll-header-panel-full-header: {
-        background-image: url('hhttps://scontent-fra3-1.xx.fbcdn.net/hphotos-xta1/t31.0-8/12087090_10153679326366882_6852399691616574988_o.jpg');
+        background-image: url('https://scontent-fra3-1.xx.fbcdn.net/hphotos-xta1/t31.0-8/12087090_10153679326366882_6852399691616574988_o.jpg');
           background-color: navy;
       };
       /* background for toolbar when it is condensed */
@@ -66,6 +66,7 @@
       font-size: 26px;
     }
     .subtitle {
+            font-family: 'Roboto', 'Noto', sans-serif;
       padding-top: 4px;
       font-size: 16px;
         
@@ -153,6 +154,10 @@
         .mobile[wide-layout] {
             display: none;
         }
+      
+      .mobile a {
+          color: var(--paper-pink-500);
+      }
         .desktop {
             display: none;
         }
@@ -160,6 +165,9 @@
             display: block;
         }
       
+      .desktop a {
+          color: white;
+      }
                       .flex-end-justified {
                         @apply(--layout-horizontal);
                         @apply(--layout-end-justified);
@@ -206,9 +214,6 @@
               <div class="desktop" wide-layout$="{{wide}}">
                 <div class="container flex-end-justified">
                   <template is="dom-if" if="{{wide}}">
-                      <style>
-                        a {color: green; /* variabiliser*/ }
-                      </style>
                       <!-- TODO : factoriser #1 -->
                       <a href="../2015/" target="_blank">
                           <paper-icon-button icon="hardware:keyboard-arrow-left"></paper-icon-button>
@@ -243,9 +248,6 @@
               <div class="mobile" wide-layout$="{{wide}}">
                 <div class="container flex-end-justified">
                   <template is="dom-if" if="{{!wide}}">
-                      <style>
-                        a {color: red; /* variabiliser*/ }
-                      </style>
                       <!-- TODO : factoriser #1 -->
                       <a href="../2015/" target="_blank">
                           <paper-icon-button icon="hardware:keyboard-arrow-left"></paper-icon-button>
@@ -267,20 +269,78 @@
       <div class="vertical-section-container centered">
 
           <div class="container flex-wrap">
-              <div class="vertical-section-card" data-dialog="backdropA">one</div>
-              <div class="vertical-section-card" data-dialog="backdropA">two</div>
-              <div class="vertical-section-card" data-dialog="backdropB">three</div>
-              <div class="vertical-section-card" data-dialog="backdropC">four</div>
               <div class="vertical-section-card grid" data-dialog="backdropC">
-					<figure class="effect-jazz">
+					<figure class="effect-jazz bg-effect-jazz">
 						<img src="https://raw.githubusercontent.com/codrops/HoverEffectIdeas/master/img/25.jpg" alt="img25">
 						<figcaption>
-							<h2>Dynamic <span>Jazz</span></h2>
-							<p>When Jazz starts to chase cars, the whole world stands still.</p>
-							<a href="#">View more</a>
+							<h2>Love <span>strong</span></h2>
+							<a href="#" data-dialog="backdropC">View more</a>
 						</figcaption>			
 					</figure>
-            </div>
+              </div>
+              <div class="vertical-section-card grid" data-dialog="backdropC">
+					<figure class="effect-jazz bg-effect-moses">
+						<img src="https://raw.githubusercontent.com/codrops/HoverEffectIdeas/master/img/1.jpg" alt="img25">
+						<figcaption>
+							<h2>Live <span>simple</span></h2>
+							<a href="#" data-dialog="backdropC">View more</a>
+						</figcaption>			
+					</figure>
+              </div>
+              <div class="vertical-section-card grid" data-dialog="backdropC">
+					<figure class="effect-jazz bg-effect-duke">
+						<img src="https://raw.githubusercontent.com/codrops/HoverEffectIdeas/master/img/25.jpg" alt="img25">
+						<figcaption>
+							<h2>Eat <span>slow</span><br>Breath  <span>deep</span></h2>
+							<a href="#" data-dialog="backdropC">View more</a>
+						</figcaption>			
+					</figure>
+              </div>
+              <div class="vertical-section-card grid" data-dialog="backdropC">
+					<figure class="effect-jazz bg-effect-lexi">
+						<img src="https://raw.githubusercontent.com/codrops/HoverEffectIdeas/master/img/25.jpg" alt="img25">
+						<figcaption>
+							<h2>Think  <span>global</span></h2>
+							<a href="#" data-dialog="backdropC">View more</a>
+						</figcaption>			
+					</figure>
+              </div>
+              <div class="vertical-section-card grid" data-dialog="backdropC">
+					<figure class="effect-jazz bg-effect-roxy">
+						<img src="https://raw.githubusercontent.com/codrops/HoverEffectIdeas/master/img/25.jpg" alt="img25">
+						<figcaption>
+							<h2>Act  <span>local</span></h2>
+							<a href="#" data-dialog="backdropC">View more</a>
+						</figcaption>			
+					</figure>
+              </div>
+              <div class="vertical-section-card grid" data-dialog="backdropC">
+					<figure class="effect-jazz bg-effect-oscar">
+						<img src="https://raw.githubusercontent.com/codrops/HoverEffectIdeas/master/img/25.jpg" alt="img25">
+						<figcaption>
+							<h2>Use  <span>less</span></h2>
+							<a href="#" data-dialog="backdropC">View more</a>
+						</figcaption>			
+					</figure>
+              </div>
+              <div class="vertical-section-card grid" data-dialog="backdropC">
+					<figure class="effect-jazz bg-effect-dexter">
+						<img src="https://raw.githubusercontent.com/codrops/HoverEffectIdeas/master/img/25.jpg" alt="img25">
+						<figcaption>
+							<h2>Travel  <span>around</span></h2>
+							<a href="#" data-dialog="backdropC">View more</a>
+						</figcaption>			
+					</figure>
+              </div>
+              <div class="vertical-section-card grid" data-dialog="backdropC">
+					<figure class="effect-jazz bg-effect-sadie">
+						<img src="https://raw.githubusercontent.com/codrops/HoverEffectIdeas/master/img/25.jpg" alt="img25">
+						<figcaption>
+							<h2>Stay  <span>free</span><br>Follow <span>none</span></h2>
+							<a href="#" data-dialog="backdropC">View more</a>
+						</figcaption>			
+					</figure>
+              </div>
             </div>
       </div>
         
@@ -294,72 +354,6 @@
       <simple-overlay id="backdropC" with-backdrop>
         Hello world! C
       </simple-overlay>
-
-        <div class="grid">
-					<figure class="effect-julia">
-						<img src="https://raw.githubusercontent.com/codrops/HoverEffectIdeas/master/img/21.jpg" alt="img21">
-						<figcaption>
-							<h2>Passionate <span>Julia</span></h2>
-							<div>
-								<p>Julia dances in the deep dark</p>
-								<p>She loves the smell of the ocean</p>
-								<p>And dives into the morning light</p>
-							</div>
-							<a href="#">View more</a>
-						</figcaption>			
-					</figure>
-					<figure class="effect-julia">
-						<img src="https://raw.githubusercontent.com/codrops/HoverEffectIdeas/master/img/22.jpg" alt="img22">
-						<figcaption>
-							<h2>Passionate <span>Julia</span></h2>
-							<div>
-								<p>Julia dances in the deep dark</p>
-								<p>She loves the smell of the ocean</p>
-								<p>And dives into the morning light</p>
-							</div>
-							<a href="#">View more</a>
-						</figcaption>			
-					</figure>
-				</div>
-        
-        <div class="grid">
-					<figure class="effect-apollo">
-						<img src="https://raw.githubusercontent.com/codrops/HoverEffectIdeas/master/img/18.jpg" alt="img18">
-						<figcaption>
-							<h2>Strong <span>Apollo</span></h2>
-							<p>Apollo's last game of pool was so strange.</p>
-							<a href="#">View more</a>
-						</figcaption>			
-					</figure>
-					<figure class="effect-apollo">
-						<img src="https://raw.githubusercontent.com/codrops/HoverEffectIdeas/master/img/22.jpg" alt="img22">
-						<figcaption>
-							<h2>Strong <span>Apollo</span></h2>
-							<p>Apollo's last game of pool was so strange.</p>
-							<a href="#">View more</a>
-						</figcaption>			
-					</figure>
-				</div>
-        
-        
-        <div class="grid">
-					<figure class="effect-jazz">
-						<img src="https://raw.githubusercontent.com/codrops/HoverEffectIdeas/master/img/25.jpg" alt="img25">
-						<figcaption>
-							<h2>Dynamic <span>Jazz</span></h2>
-							<p>When Jazz starts to chase cars, the whole world stands still.</p>
-							<a href="#">View more</a>
-						</figcaption>			
-					</figure>
-					<figure class="effect-jazz">
-						<img src="https://raw.githubusercontent.com/codrops/HoverEffectIdeas/master/img/6.jpg" alt="img06">
-						<figcaption>
-							<h2>Dynamic <span>Jazz</span></h2>
-							<p>When Jazz starts to chase cars, the whole world stands still.</p>
-							<a href="#">View more</a>
-						</figcaption>			
-					</figure>
-				</div>
         
     </div>
 
@@ -392,7 +386,10 @@
         var dialog = document.getElementById(id);
           
         if (dialog) {
+            console.log("open");
           dialog.open();
+        } else {
+            console.log("nop");
         }
       }
     </script>
